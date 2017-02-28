@@ -206,11 +206,11 @@ sudo systemctl enable mariadb.service
 # sudo mysql_secure_installation
 # https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 
-# If mysql user had any password set...
+# If mysql root user had any password set...
 # mysql -u root -p[secret_password]
 
-mysql -u root -e "CREATE USER 'mysqluser'@'localhost' IDENTIFIED BY 'secret'"
-mysql -u root -e "GRANT ALL PRIVILEGES ON * . * TO 'mysqluser'@'localhost'"
+mysql -u root -e "CREATE USER 'msuser'@'localhost' IDENTIFIED BY 'secret'"
+mysql -u root -e "GRANT ALL PRIVILEGES ON * . * TO 'msuser'@'localhost'"
 mysql -u root -e "FLUSH PRIVILEGES"
 
 
