@@ -1,0 +1,22 @@
+[core]
+	editor = micro
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	ss = status
+	df = diff
+[merge]
+    tool = meld
+[mergetool]
+    prompt = false
+    keepBackup = false
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
