@@ -44,6 +44,27 @@ echo '. /etc/profile.d/vte.sh' >> ~/.bashrc
 
 
 ################################################################################
+# SET UP GIT + OPENSSH
+################################################################################
+
+sudo pacman -S git openssh wget curl bash-completion xclip --noconfirm
+
+# Copy prepared global gitconfig
+sudo cp ./src/git/gitconfig ~/.gitconfig
+sudo chown $USER:$USER ~/.gitconfig
+sudo chmod 644 ~/.gitconfig
+
+# Basic global git config
+# git config --global user.name "John Doe"
+# git config --global user.email "johndoe@acme.com"
+
+# Generate new / add existing ssh keys
+# ssh-keygen -t rsa -b 4096 -C "johndoe@acme.com"
+# ssh-add ~/.ssh/id_rsa_existing_key
+
+
+
+################################################################################
 # INSTALL MAIN APPS
 ################################################################################
 sudo pacman -S \
@@ -64,6 +85,7 @@ google-chrome \
 slack-desktop \
 tixati \
 yarn \
+micro \
 --noconfirm
 
 
@@ -133,6 +155,11 @@ ttf-roboto-mono \
 sudo pacman -S atom --noconfirm
 yaourt -S gitkraken --noconfirm
 
+# mkdir ~/Configuration
+# git clone git@github.com:imrea/setup-atom.git ~/Configuration/setup-atom
+# sudo chown $USER:$USER -R ~/Configuration/
+# sudo chmod 700 -R ~/Configuration/
+
 
 
 ################################################################################
@@ -181,12 +208,10 @@ sudo systemctl enable mariadb.service
 
 # If mysql user had any password set...
 # mysql -u root -p[secret_password]
-mysql -u root
-# CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
-CREATE USER 'mysqluser'@'localhost' IDENTIFIED BY 'secret';
-GRANT ALL PRIVILEGES ON * . * TO 'mysqluser'@'localhost';
-FLUSH PRIVILEGES;
-\q
+
+mysql -u root -e "CREATE USER 'mysqluser'@'localhost' IDENTIFIED BY 'secret'"
+mysql -u root -e "GRANT ALL PRIVILEGES ON * . * TO 'mysqluser'@'localhost'"
+mysql -u root -e "FLUSH PRIVILEGES"
 
 
 
