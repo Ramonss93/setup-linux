@@ -47,7 +47,7 @@ echo '. /etc/profile.d/vte.sh' >> ~/.bashrc
 # SET UP GIT + OPENSSH
 ################################################################################
 
-sudo pacman -S git openssh wget curl bash-completion xclip --noconfirm
+sudo pacman -S git openssh wget curl bash-completion --noconfirm
 
 # Copy prepared global gitconfig
 sudo cp ./src/git/gitconfig ~/.gitconfig
@@ -68,6 +68,7 @@ sudo chmod 644 ~/.gitconfig
 # INSTALL MAIN APPS
 ################################################################################
 sudo pacman -S \
+bleachbit \
 jpegoptim \
 meld \
 nodejs \
@@ -78,11 +79,13 @@ file-roller \
 tmux \
 tilda \
 vlc \
+xlip \
 --noconfirm
 
 yaourt -S \
 google-chrome \
 slack-desktop \
+skypeforlinux-bin \
 tixati \
 yarn \
 micro \
@@ -291,7 +294,7 @@ sudo systemctl enable nginx.service php-fpm.service
 # INSTALL VIRTUALBOX
 ################################################################################
 
-sudo pacman -S vagrant virtualbox linux44-virtualbox-host-modules --noconfirm
+sudo pacman -S vagrant virtualbox linux49-virtualbox-host-modules --noconfirm
 sudo modprobe vboxdrv
 sudo modprobe vboxnetadp
 sudo modprobe vboxnetflt
