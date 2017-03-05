@@ -10,10 +10,20 @@ echo "alias lla='ls -l1ha --group-directories-first'" >> ~/.bashrc
 
 # npm & yarn aliases
 echo "alias nr='npm run '" >> ~/.bashrc
+
 echo "alias yr='yarn run '" >> ~/.bashrc
-echo "alias yadd='yarn add '" >> ~/.bashrc
 echo "alias yinfo='yarn info '" >> ~/.bashrc
 echo "alias yinit='yarn init '" >> ~/.bashrc
+echo '
+yas () {
+    yarn add $@ -S
+}
+
+yad () {
+    yarn add $@ -D
+}
+' >> ~/.bashrc
+
 echo "alias lgulp='./node_modules/.bin/gulp '" >> ~/.bashrc
 echo "alias lwebpack='./node_modules/.bin/webpack '" >> ~/.bashrc
 
@@ -26,6 +36,8 @@ echo "alias vp='vagrant provision'" >> ~/.bashrc
 # System aliases
 echo "alias fcc='sudo fc-cache -fv'" >> ~/.bashrc
 echo "alias pmg='sudo pacman-mirrors -g'" >> ~/.bashrc
+echo "alias scm='sudo chmod'" >> ~/.bashrc
+echo "alias sco='sudo chown'" >> ~/.bashrc
 
 # Make composer installed lib bins globally available
 echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> ~/.bashrc
