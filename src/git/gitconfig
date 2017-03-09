@@ -6,6 +6,8 @@
 	ci = commit
 	ss = status
 	df = diff
+	lg = log --pretty='format:%C(yellow)%h %C(blue)%>(12,trunc)%ad %C(green)%<(10,trunc)%aN %C(reset)%s' --date=relative --no-merges
+	lgf = log --pretty='format:%C(yellow)%h %C(blue)%>(12,trunc)%ad %C(green)%<(10,trunc)%aN %C(reset)%s' --date=relative
 [merge]
     tool = meld
 [mergetool]
