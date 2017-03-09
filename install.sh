@@ -306,7 +306,7 @@ sudo systemctl enable nginx.service php-fpm.service
 # INSTALL VIRTUALBOX
 ################################################################################
 
-sudo pacman -S vagrant virtualbox linux49-virtualbox-host-modules --noconfirm
+sudo pacman -S vagrant virtualbox linux44-virtualbox-host-modules --noconfirm
 sudo modprobe vboxdrv
 sudo modprobe vboxnetadp
 sudo modprobe vboxnetflt
