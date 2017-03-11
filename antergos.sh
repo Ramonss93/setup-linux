@@ -63,7 +63,7 @@ sudo pacman -S git openssh wget curl bash-completion --noconfirm
 
 # Copy prepared global gitconfig
 sudo cp ./src/git/gitconfig ~/.gitconfig
-sudo chown $USER:$USER ~/.gitconfig
+sudo chown $USER:users ~/.gitconfig
 sudo chmod 644 ~/.gitconfig
 
 # Basic global git config
@@ -91,7 +91,7 @@ file-roller \
 tmux \
 tilda \
 vlc \
-xlip \
+xclip \
 --noconfirm
 
 yaourt -S \
@@ -110,17 +110,12 @@ micro \
 ################################################################################
 
 sudo pacman -S \
-adapta-maia-theme \
-arc-firefox-theme \
-arc-firefox-theme-maia \
 arc-gtk-theme \
-arc-themes-maia \
 --noconfirm
 
 yaourt -S \
 adapta-gtk-theme \
 adapta-backgrounds \
-chrome-gnome-shell-git \
 gnome-shell-extension-coverflow-alt-tab-git \
 gnome-shell-extension-dash-to-panel-git \
 gnome-shell-extension-mediaplayer-git \
@@ -128,8 +123,6 @@ gnome-shell-extension-nohotcorner-git \
 gnome-shell-extension-put-window-git \
 gnome-shell-extension-topicons-plus-git \
 gtk-arc-flatabulous-theme-git \
-manjaro-backgrounds \
-menda-circle-icon-theme \
 paper-icon-theme-git \
 la-capitaine-icon-theme-git \
 --noconfirm
@@ -248,10 +241,10 @@ php-pgsql \
 php-sqlite \
 --noconfirm
 
-yaourt -S php-pear --noconfirm
-
 # For mongodb extension
-sudo pecl install mongodb
+# Edit PKGBUILD: md5sums=('0c3206e8d443c32ae5b938f2d7fa4589')
+# yaourt -S php-pear --noconfirm
+# sudo pecl install mongodb
 
 # PostgreSQL extension
 echo "extension=pgsql.so" | sudo tee --append /etc/php/php.ini
@@ -310,7 +303,7 @@ sudo systemctl enable nginx.service php-fpm.service
 # INSTALL VIRTUALBOX
 ################################################################################
 
-sudo pacman -S vagrant virtualbox linux49-virtualbox-host-modules --noconfirm
+sudo pacman -S vagrant virtualbox virtualbox-host-modules-arch --noconfirm
 sudo modprobe vboxdrv
 sudo modprobe vboxnetadp
 sudo modprobe vboxnetflt
