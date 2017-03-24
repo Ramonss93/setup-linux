@@ -290,14 +290,19 @@ sudo pacman -S nginx-mainline --noconfirm
 yaourt -S adminer --noconfirm
 
 sudo cp -Rf ./src/nginx/* /etc/nginx/
-sudo mkdir /etc/nginx/servers-enabled
+sudo mkdir /etc/nginx/sites-enabled
 
 sudo chown root:root -R /etc/nginx/*
 sudo chmod 644 -R /etc/nginx/*
 
-# For simplicity, copied these in the main nginx.conf
-# sudo ln -s /etc/nginx/servers-available/default /etc/nginx/servers-enabled/default
-# sudo ln -s /etc/nginx/servers-available/adminer /etc/nginx/servers-enabled/adminer
+git clone https://github.com/perusio/nginx_ensite.git ../nginx_ensite
+# cd ../nginx_ensite
+# sudo make install
+
+
+# For simplicity, these can be copied in the main nginx.conf
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/adminer /etc/nginx/sites-enabled/adminer
 
 echo -e "127.0.0.1\tadminer.local" | sudo tee --append /etc/hosts
 
