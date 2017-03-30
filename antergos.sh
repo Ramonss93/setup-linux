@@ -90,11 +90,11 @@ tree \
 file-roller \
 tmux \
 tilda \
-vlc \
 xclip \
 --noconfirm
 
 yaourt -S \
+flacon \
 google-chrome \
 slack-desktop \
 skypeforlinux-bin \
@@ -347,6 +347,9 @@ gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
 
 # Fix inofity file watch limit error
 echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
+
+# Remove orphans (https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29)
+sudo pacman -Rns $(pacman -Qtdq)
 
 
 
