@@ -81,26 +81,28 @@ sudo chmod 644 ~/.gitconfig
 ################################################################################
 sudo pacman -S \
 bleachbit \
+easytag \
+file-roller \
 jpegoptim \
+mac \
 meld \
 nodejs \
 npm \
 optipng \
-tree \
-file-roller \
-tmux \
 tilda \
-vlc \
+tmux \
+tree \
 xclip \
 --noconfirm
 
 yaourt -S \
+flacon \
 google-chrome \
-slack-desktop \
+micro \
 skypeforlinux-bin \
+slack-desktop \
 tixati \
 yarn \
-micro \
 --noconfirm
 
 
@@ -211,6 +213,15 @@ sudo systemctl enable postgresql.service
 sudo -i -u postgres createuser -s $USER
 createdb $USER
 
+
+
+################################################################################
+# INSTALL REDIS
+################################################################################
+
+sudo pacman -S redis --noconfirm
+sudo systemctl start redis.service
+sudo systemctl enable redis.service
 
 
 ################################################################################
