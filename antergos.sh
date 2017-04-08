@@ -44,6 +44,7 @@ echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> ~/.bashrc
 
 # Ruby related things
 echo "alias be='bundle exec '" >> ~/.bashrc
+echo "alias rh='rbenv rehash'" >> ~/.bashrc
 echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
 
 # rbenv initialization
