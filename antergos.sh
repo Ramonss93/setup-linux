@@ -251,10 +251,8 @@ php-pgsql \
 php-sqlite \
 --noconfirm
 
-# For mongodb extension
-# Edit PKGBUILD: md5sums=('0c3206e8d443c32ae5b938f2d7fa4589')
-# yaourt -S php-pear --noconfirm
-# sudo pecl install mongodb
+yaourt -S php-pear --noconfirm
+sudo pecl install mongodb
 
 # PostgreSQL extension
 echo "extension=pgsql.so" | sudo tee --append /etc/php/php.ini
