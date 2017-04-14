@@ -94,6 +94,7 @@ tilda \
 tmux \
 tree \
 xclip \
+ripgrep \
 --noconfirm
 
 yaourt -S \
