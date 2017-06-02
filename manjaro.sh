@@ -33,6 +33,10 @@ echo "alias vs='vagrant ssh'" >> ~/.bashrc
 echo "alias vh='vagrant halt'" >> ~/.bashrc
 echo "alias vp='vagrant provision'" >> ~/.bashrc
 
+# Docker aliases
+echo "alias dc='docker container'" >> ~/.bashrc
+echo "alias di='docker image'" >> ~/.bashrc
+
 # System aliases
 echo "alias fcc='sudo fc-cache -fv'" >> ~/.bashrc
 echo "alias pmg='sudo pacman-mirrors -g'" >> ~/.bashrc
@@ -90,7 +94,7 @@ meld \
 nodejs \
 npm \
 optipng \
-tilda \
+guake \
 tmux \
 tree \
 xclip \
@@ -147,7 +151,6 @@ la-capitaine-icon-theme-git \
 sudo pacman -S \
 adobe-source-code-pro-fonts \
 otf-fira-mono \
-otf-fira-sans \
 ttf-croscore \
 ttf-hack \
 ttf-inconsolata \
@@ -306,7 +309,7 @@ sudo mkdir /etc/nginx/sites-enabled
 sudo chown root:root -R /etc/nginx/*
 sudo chmod 644 -R /etc/nginx/*
 
-git clone https://github.com/perusio/nginx_ensite.git ../nginx_ensite
+# git clone https://github.com/perusio/nginx_ensite.git ../nginx_ensite
 # cd ../nginx_ensite
 # sudo make install
 
