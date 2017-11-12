@@ -36,6 +36,8 @@ echo "alias vp='vagrant provision'" >> ~/.bashrc
 # Docker aliases
 echo "alias dc='docker container'" >> ~/.bashrc
 echo "alias di='docker image'" >> ~/.bashrc
+echo "alias dr='docker run'" >> ~/.bashrc
+echo "alias de='docker exec'" >> ~/.bashrc
 
 # System aliases
 echo "alias fcc='sudo fc-cache -fv'" >> ~/.bashrc
@@ -72,8 +74,8 @@ sudo chown $USER:$USER ~/.gitconfig
 sudo chmod 644 ~/.gitconfig
 
 # Basic global git config
-# git config --global user.name "John Doe"
-# git config --global user.email "johndoe@acme.com"
+# git config --global user.name "Ákos Imre"
+# git config --global user.email "19newvillage92@gmail.com"
 
 # Generate new / add existing ssh keys
 # ssh-keygen -t rsa -b 4096 -C "johndoe@acme.com"
@@ -99,16 +101,15 @@ tmux \
 tree \
 xclip \
 ripgrep \
+yarn \
 --noconfirm
 
 yaourt -S \
 flacon \
-google-chrome \
 micro \
 skypeforlinux-bin \
 slack-desktop \
 tixati \
-yarn \
 --noconfirm
 
 
@@ -368,6 +369,8 @@ sudo systemctl enable gdm -f
 
 # Fix multi-monitor workplace scroll
 gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Super>Page_Down']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Super>Page_Up']"
 
 # Fix inofity file watch limit error
 echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system

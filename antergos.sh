@@ -36,6 +36,8 @@ echo "alias vp='vagrant provision'" >> ~/.bashrc
 # Docker aliases
 echo "alias dc='docker container'" >> ~/.bashrc
 echo "alias di='docker image'" >> ~/.bashrc
+echo "alias dr='docker run'" >> ~/.bashrc
+echo "alias de='docker exec'" >> ~/.bashrc
 
 # System aliases
 echo "alias fcc='sudo fc-cache -fv'" >> ~/.bashrc
@@ -359,6 +361,8 @@ sudo systemctl enable gdm -f
 
 # Fix multi-monitor workplace scroll
 gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Super>Page_Down']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Super>Page_Up']"
 
 # Fix inofity file watch limit error
 echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
